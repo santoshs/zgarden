@@ -1,7 +1,10 @@
 * Zen Garden - A digital garden theme for Hugo
+  This uses https://github.com/santoshs/zgarden-frontend, a webassembly based
+  frontend.
 
 *** Resources & References
     - Stop words from: https://countwordsfree.com/stopwords
+    - https://discourse.gohugo.io/t/filter-out-stopwords-or-anything-in-a-string-or-content/40000
 
 *** Todo
     - [ ] Fix backlinks
