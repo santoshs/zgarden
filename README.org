@@ -1,0 +1,7 @@
+* Zen Garden - A digital garden theme for Hugo
+
+*** Resources & References
+    - Stop words from: https://countwordsfree.com/stopwords
+
+*** Todo
+    - [ ] Fix backlinks

@@ -1,0 +1,17 @@
+{{ $result := slice }}
+
+{{ $backlinks := slice }}
+{{ range .Site.RegularPages }}
+{{ if gt (len .Title) 0 }}
+{{ $filteredString := trim (replaceRE "[^\\w+'-]+" " " (replaceRE "’" "'" (.Plain | htmlUnescape | lower))) " " }}
+{{ $stringArray := split $filteredString " " }}
+{{ $sw := site.Data.stopwords }}
+{{ $filteredArray :=  complement $sw $stringArray }}
+{{ $filteredArray :=  $filteredArray | uniq }}
+{{ $content := delimit $filteredArray " " }}
+{{ $data := dict "title" .Title "content" $content "id" .File.UniqueID "url" .Permalink}}
+    {{ $result = $result | append $data }}
+  {{ end }}
+{{ end }}
+
+{{ jsonify $result }}

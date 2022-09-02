@@ -1,0 +1,5 @@
+{
+    "title": "{{ .Title }}",
+    "content": {{ jsonify .Content }},
+    "backlinks": {{ partial "backlinks.html" }}
+}
